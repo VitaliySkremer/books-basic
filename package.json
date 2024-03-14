@@ -20,5 +20,8 @@
     "rollup": "^4.12.1",
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.2"
+  },
+  "dependencies": {
+    "on-change": "^5.0.1"
   }
 }

@@ -1,10 +1,13 @@
 import { View } from './common/view';
-import { IRoute } from './models/models';
+import { IAppState, IRoute } from './models/models';
 import { MainView } from './views/main/main';
 
 class App {
   currentView: View | undefined = undefined;
-  routes: IRoute[] = [{ path: '', view: new MainView() }];
+  appState: IAppState = {
+    favorites: [],
+  };
+  routes: IRoute[] = [{ path: '', view: new MainView(this.appState) }];
   constructor() {
     window.addEventListener('hashchange', this.route.bind(this));
     this.route();

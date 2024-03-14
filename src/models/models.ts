@@ -4,3 +4,7 @@ export interface IRoute {
 	path: string,
 	view: View
 }
+
+export interface IAppState {
+	favorites: string[]
+}
