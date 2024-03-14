@@ -1,4 +1,5 @@
 import { View } from '../../common/view';
+import { Header } from '../../components/header/header';
 import { IAppState } from '../../models/models';
 import onChange from 'on-change';
 
@@ -22,10 +23,15 @@ export class MainView extends View {
 	}
   render() {
     const main = document.createElement('main');
-    main.innerHTML = `Число книг ${this.appState.favorites.length}`;
     if (this.app) {
       this.app.innerHTML = '';
       this.app.append(main);
+			this.renderHeader();
     }
   }
+
+	renderHeader() {
+		const header = new Header(this.appState).render();
+		this.app?.prepend(header);
+	}
 }
